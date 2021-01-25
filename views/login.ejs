@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href='/images/icons/favicon.ico'/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href='/vendor/bootstrap/css/bootstrap.min.css'>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/public/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+<!--===============================================================================================-->
+</head>
+<body>
+    
+    <nav
+      id="nav-bar"
+      data-aos="fade-down"
+      data-aos-duration="1500"
+      data-aos-easing="linear"
+    >
+      <span class="open-slide">
+        <a id="ham-link" href="#">
+          <img id="hamburger" src="/images/ham.png" alt="" />
+        </a>
+      </span>
+      <ul id="nav-items">
+        <li class="nav-item">
+          <a class="nav-text" href="/"> home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-text " href="/signup"> signup </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-text active" href="/login"> login </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="side-menu" class="side-nav"></div>
+
+	<div class="limiter" style="margin-top: -10rem;">
+	
+		<div class="container-login100">
+			<div class="wrap-login100" >
+				<div class="login100-pic js-tilt" data-tilt style="margin-top: -5rem;">
+					<img src="/images/img-01.png" alt="IMG">
+				</div>
+
+				<form method="POST" action="/login" class="login100-form validate-form" style="margin-top: -6rem;">
+					<%- include("messages/_formMessages.ejs") %> 
+						
+					<span class="login100-form-title" style="font-size: 2.6rem;">
+						Login
+					</span>
+
+					<div class="wrap-input100 validate-input"  data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" required name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" required name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-right mt-3">
+						
+						<a href="/forgot" class="txt2">Forgot password?</a>
+					</a>
+				</div>
+
+					<div class="text-center p-t-136">
+						
+							Don't have an Account?<a class="txt2" href="/signup"> Sign Up</a>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="/vendor/jquery/jquery.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+	
+<script>
+
+	document.querySelector('form').addEventListener("click", (e) => {
+		if(e.target.className == 'close') {
+			e.target.parentElement.remove()
+		}
+	})
+
+	document.getElementById("crosss").addEventListener("click", (e) => {
+		console.log("asdsd");
+	  document.querySelector(".alert-success").remove();
+	});
+  </script>
+
+</body>
+</html>

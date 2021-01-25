@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your recipie</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <%- include("utils/_add_btn.ejs") %> <%- include("utils/_header.ejs") %>
+    <div class="preloader-background">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main container">
+      <h3
+        style="
+          font-weight: 600;
+          font-family: Poppins;
+          text-decoration: underline;
+          margin-bottom: 3rem;
+        "
+      >
+        Dashboard
+      </h3>
+      <h6 style="font-family: Montserrat">Welcome <%= name %>.</h6>
+
+      <% if (recipes.length > 0) { %>
+      <table class="striped" style="margin-top: 2rem">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% recipes.forEach(recipe => { %>
+          <tr>
+            <td>
+              <a
+                id="title"
+                style="font-family: Poppins"
+                href="/recipies/<%= recipe._id %> "
+                ><%= recipe.title %>
+              </a>
+            </td>
+            <td id="created-at">
+              <%= formatDate(recipe.createdAt, 'MMMM Do YYYY') %>
+            </td>
+            <td>
+              <a
+                href="/recipies/edit/<%= recipe._id %>"
+                style="float: left"
+                class="btn btn-float edit"
+                ><i class="fa fa-edit"></i
+              ></a>
+
+              <form
+                action="/recipies/delete/<%= recipe._id %>?_method=DELETE"
+                method="POST"
+              >
+                <button class="btn del red" type="submit">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else{ %>
+      <p
+        style="
+          padding-top: 2rem;
+          display: inline-block;
+          font-family: Poppins;
+          font-weight: 600;
+        "
+      >
+        You have not created any recipes.
+      </p>
+      <% } %>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <script>
+      M.Sidenav.init(document.querySelector(".sidenav"));
+      M.FormSelect.init(document.querySelector("#status"));
+      document.addEventListener("DOMContentLoaded", function () {
+        $(".preloader-background").delay(1700).fadeOut("slow");
+
+        $(".preloader-wrapper").delay(1700).fadeOut();
+      });
+    </script>
+  </body>
+</html>

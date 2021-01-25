@@ -1,0 +1,48 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+  background-color: aliceblue;
+}
+
+#create {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+#form {
+  margin-top: 4rem;
+  width: 50%;
+  background-color: #eaf4fc;
+  padding: 4rem 1rem;
+  border: 2px #eaf4fc solid;
+  height: 70vh;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+#form input {
+  outline: none;
+  font-family: Poppins;
+  width: 30%;
+}
+
+#text-area {
+  width: 50%;
+  margin-top: 1rem;
+  height: 20vh;
+}
+
+#createRecipe {
+  margin-top: 3rem;
+}
+
+.btn {
+  font-family: Poppins;
+  font-weight: 600;
+}

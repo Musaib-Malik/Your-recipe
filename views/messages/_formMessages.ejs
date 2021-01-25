@@ -1,0 +1,62 @@
+<% if (typeof error != 'undefined') { %>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <a
+    href="#"
+    style="margin-left: 0.4rem"
+    id="close-alert"
+    class="close"
+    data-dismiss="alert"
+    aria-label="close"
+    >&times;</a
+  >
+  <p style="font-size: 13px; color: black; font-weight: 500"><%= error %></p>
+</div>
+<% } %>
+
+<!-- Success -->
+<% if (success_msg != '') { %>
+<div class="alert alert-success">
+  <a
+    href="#"
+    style="margin-left: 0.4rem"
+    id=" cross"
+    class="close"
+    data-dismiss="alert"
+    aria-label="close"
+    >&times;</a
+  >
+  <p style="font-size: 13px"><%= success_msg %></p>
+</div>
+<% } %>
+
+<!-- On accessing resource without login -->
+<% if (error_msg != '') { %>
+<div class="alert alert-danger">
+  <a
+    href="#"
+    style="margin-left: 0.4rem"
+    id=" cross"
+    class="close"
+    data-dismiss="alert"
+    aria-label="close"
+    >&times;</a
+  >
+  <p style="font-size: 13px"><%= error_msg %></p>
+</div>
+<% } %>
+
+<!-- messages.error -->
+<% if (typeof messages.error != 'undefined') { %>
+<div class="alert alert-danger">
+  <a
+    href="#"
+    style="margin-left: 0.4rem"
+    id=" cross"
+    class="close"
+    data-dismiss="alert"
+    aria-label="close"
+    >&times;</a
+  >
+  <p style="font-size: 13px"><%= messages.error %></p>
+</div>
+<% } %>

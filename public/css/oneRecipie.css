@@ -1,0 +1,50 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+  background-color: #111;
+}
+
+.container {
+  margin-top: 4rem;
+  background-color: #fff;
+  border-radius: 13px;
+  padding: 1rem 2.6rem !important;
+}
+
+#title {
+  font-weight: 600;
+  margin-top: -0.1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-decoration: underline;
+  font-family: Poppins;
+}
+
+.item-1 h4 {
+  font-family: Asap;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  color: dodgerblue;
+}
+
+.lead::before {
+  content: "▹";
+}
+
+.lead {
+  font-weight: 600;
+  font-family: Poppins;
+  line-height: 2;
+}
+
+.item-2 h4 {
+  color: crimson;
+  font-family: Asap;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}

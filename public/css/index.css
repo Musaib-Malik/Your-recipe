@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  transition: all 1s linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nav-bar {
+  margin: 0;
+  height: 20vh;
+}
+
+#nav-items {
+  display: none;
+}
+
+.nav-item {
+  margin-right: 2.5em;
+}
+
+.nav-text {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #aab5d5;
+  font-family: Poppins;
+  font-weight: 600;
+  transition: all 200ms linear;
+  margin: 0;
+}
+
+.nav-text:hover {
+  color: white;
+  font-size: 18px;
+}
+
+.active {
+  background-color: #2c56fc;
+  padding: 3px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.active:hover {
+  font-size: 1rem;
+}
+
+#hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.5em;
+  height: 3.5vh;
+}
+
+#ham-link {
+  text-decoration: none;
+  outline: none;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #001f40;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.animate-side-menu-opening {
+  animation: opening-animation 300ms linear;
+  animation-fill-mode: forwards;
+}
+
+.animate-side-menu-closing {
+  animation: closing-animation 200ms linear;
+  animation-fill-mode: forwards;
+}
+
+.btn-close {
+  color: #2c56ff;
+  text-decoration: none;
+  font-size: 3rem;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-weight: bolder;
+  outline: none;
+}
+
+#side-menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.side-menu-item {
+  margin-top: 2.4em;
+  list-style: none;
+  text-align: center;
+}
+
+.side-menu-text {
+  color: #aab5d5;
+  text-decoration: none;
+  font-family: "roboto Mono";
+  font-weight: bolder;
+  transition: all 200ms linear;
+}
+
+.side-menu-text:hover {
+  color: white;
+}
+
+#side-serial-number {
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+#main-area-container {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  color: white;
+  height: 60vh;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+}
+
+#some-talk {
+  font-size: 13px;
+  font-family: roboto mono;
+  color: #2c56ff;
+  margin-bottom: 10px;
+}
+
+#quote {
+  font-family: "Montserrat";
+  color: #ccd6f6;
+  font-size: 2rem;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  width: 55%;
+  line-height: 3.3rem;
+}
+
+.item-1 {
+  margin-top: 5rem;
+}
+
+#food {
+  height: 350px;
+  margin-right: 8rem;
+
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  #quote {
+    font-size: 1.7rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #main-area-container {
+    display: block;
+  }
+
+  #food {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .side-menu-text {
+    font-size: 1.6rem;
+  }
+
+  #side-menu-items {
+    height: 82vh;
+  }
+
+  .side-menu-item {
+    margin-bottom: 2em;
+  }
+
+  #hamburger {
+    margin: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hamburger {
+    display: none;
+  }
+
+  #nav-items {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2.3em;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes opening-animation {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 65%;
+  }
+}
+
+@keyframes closing-animation {
+  0% {
+    width: 65%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}

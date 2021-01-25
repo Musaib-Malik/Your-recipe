@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron mt-5">
+        <p class="lead">
+          <% if(err.message.includes("expired")){ %>
+           <h2> Your token has expired!</h2>
+          <% } else{ %>  
+            <h2><%= err %> </h2>
+         <% } %>
+        </p>
+        <hr class="my-4" />
+        <p>Retry registering!</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/signup" role="button"
+            >Sign-up</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
